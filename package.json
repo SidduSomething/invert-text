@@ -1,6 +1,6 @@
 {
   "name": "invert-text",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A simple tool to generate inverted/upside-down/australiaized/upended/upturned text",
   "main": "index.js",
   "bin": "index.js",
