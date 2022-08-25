@@ -12,7 +12,7 @@ A better mechanism for testing Localization (L10N) compared to translations of a
 |----------|----------|
 |the quick brown fox jumps over the lazy dog.|.ƃop ʎzɐʅ ǝɥʇ ɹǝʌo sdɯnɾ xoⅎ uʍoɹq ʞɔᴉnb ǝɥʇ|
 |THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.|.⅁Oᗡ ⅄Z∀⅂ ƎHꓕ ꓤƎɅO SԀWՈᒋ XOᖵ NMOꓤꓭ ꓘϽIՈꝹ ƎHꓕ|
-|9876543210|0⇂↊↋h59𝘓86|
+|9876543210|0⇂ᄅƐh59ㄥ86|
 |Random %^&* Characters !@#$ in ()+,./-_ between|uǝǝʍʇǝq _-/.,+() uᴉ $#@! sɹǝʇɔɐɹɐɥϽ *&^% ɯopuɐꓤ|
 |(parentheses) [brackets] {braces}|{sǝɔɐɹq} [sʇǝʞɔɐɹq] (sǝsǝɥʇuǝɹɐd)|
 

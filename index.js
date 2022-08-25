@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const { Command } = require('commander');
+const { version } = require('./package.json');
 const { invertPhrase, invertObjectNode } = require('./src/invert');
 
 const program = new Command();
@@ -9,7 +10,7 @@ const args = program
   .option('-p, --phrases [phrases...]', 'specify input words/phrases to be inverted')
   .option('-i, --file-input <path-to-file>', 'path to the source JSON file')
   .option('-o, --file-output <path-to-file>', 'path for the output JSON file with inverted texts')
-  .version('0.2.0', '-v, --version', 'output the current version')
+  .version(version, '-v, --version', 'output the current version')
   .parse(process.argv)
   .opts();
 

@@ -32,7 +32,7 @@ describe('invertPhrase utility', () => {
     const expected = [
       '.ƃop ʎzɐʅ ǝɥʇ ɹǝʌo sdɯnɾ xoⅎ uʍoɹq ʞɔᴉnb ǝɥʇ',
       '.⅁Oᗡ ⅄Z∀⅂ ƎHꓕ ꓤƎɅO SԀWՈᒋ XOᖵ NMOꓤꓭ ꓘϽIՈꝹ ƎHꓕ',
-      '0⇂↊↋h59𝘓86',
+      '0⇂ᄅƐh59ㄥ86',
       'uǝǝʍʇǝq -/.,+_() uᴉ $#@! sɹǝʇɔɐɹɐɥϽ *&^% ɯopuɐꓤ',
       '{sǝɔɐɹq} [sʇǝʞɔɐɹq] (sǝsǝɥʇuǝɹɐd)'
     ];
