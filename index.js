@@ -10,6 +10,10 @@ const args = program
   .option('-p, --phrases [phrases...]', 'specify input words/phrases to be inverted')
   .option('-i, --file-input <path-to-file>', 'path to the source JSON file')
   .option('-o, --file-output <path-to-file>', 'path for the output JSON file with inverted texts')
+  .option(
+    '-t, --token-pattern <regex-pattern>',
+    "Patterns within the phrase that shouldn't be inverted. NOTE: This is passed to a RegExp constructor; escape special characters as needed."
+  )
   .version(version, '-v, --version', 'output the current version')
   .parse(process.argv)
   .opts();

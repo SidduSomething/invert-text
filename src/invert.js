@@ -91,14 +91,22 @@ const charMap = {
 /**
  * Inverts a single phrase of text
  * @param {string} phrase - Input phrase to invert
+ * @param {string} [tokenPattern] - Patterns within the phrase that shouldn't be inverted.
  * @returns {string} Inverted phrase
  */
-const invertPhrase = phrase => {
-  let output = '';
-  [...phrase].reverse().forEach(char => {
-    output += charMap[char] || char;
+const invertPhrase = (phrase, tokenPattern = '{\\d}') => {
+  // Using parentheses to get the tokens as well in the response
+  const segments = tokenPattern ? phrase.split(new RegExp(`(${tokenPattern})`)) : [phrase];
+  const invertedSegments = segments.map((segment, index) => {
+    if (index % 2 === 1) return segment;
+
+    return [...segment]
+      .reverse()
+      .map(char => charMap[char] || char)
+      .join('');
   });
-  return output;
+
+  return invertedSegments.reverse().join('');
 };
 exports.invertPhrase = invertPhrase;
 
@@ -106,25 +114,26 @@ exports.invertPhrase = invertPhrase;
  * Recursively inverts all leaf-level text nodes in the input JSON tree
  * Does NOT mutate the input
  * @param {any} node - Any node in a JSON object
+ * @param {string} [tokenPattern] - Patterns within the phrase that shouldn't be inverted.
  * @returns {any} A new node with all leaf-level texts inverted
  */
-const invertObjectNode = node => {
+const invertObjectNode = (node, tokenPattern) => {
   // ARRAY
   if (Array.isArray(node)) {
-    return node.map(n => invertObjectNode(n));
+    return node.map(n => invertObjectNode(n, tokenPattern));
   }
 
   // OBJECT
   if (typeof node === 'object') {
     return Object.fromEntries(
       // Invert each [key, value] pair
-      Object.entries(node).map(([key, value]) => [key, invertObjectNode(value)])
+      Object.entries(node).map(([key, value]) => [key, invertObjectNode(value, tokenPattern)])
     );
   }
 
   // STRING
   if (typeof node === 'string') {
-    return invertPhrase(node);
+    return invertPhrase(node, tokenPattern);
   }
 
   // Return everything else unchanged
